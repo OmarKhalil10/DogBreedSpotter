@@ -165,6 +165,15 @@ https://dog-breed-spotter-t6mbhrffxa-oa.a.run.app
 python request_main_v6.py
 ```
 
+# The response can be found from the log on flaskapp-cr-v1 instance on Cloud Run.
+
+
+```
+insert logs image
+```
+
+
+
 
 
 
