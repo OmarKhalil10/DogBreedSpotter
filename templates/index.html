@@ -161,11 +161,18 @@
                             <label for="file" class="file-button">
                                 <span>Upload an image</span>
                             </label>
-                            <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png" required style="display: none;">
-                            <br><br>
+                            <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png" required
+                                style="display: none;">
+                            <br>
+                            <!-- Add a div to display the success message and image name -->
+                            <div id="upload-success" style="display: none;">
+                                <p>Image uploaded <span class="green-text"><b>successfully</b></span> with the name:</p>
+                                <p id="uploaded-image-name"></p>
+                            </div>
+                            <br>
                             <label for="model"
                                 style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 18px; color: #333;">Choose
-                                a model:</label>
+                                a model</label>
                             <select name="model" id="model" required
                                 style="width: 100%; padding: 8px; margin-bottom: 20px;">
                                 <option value="resnet">ResNet</option>

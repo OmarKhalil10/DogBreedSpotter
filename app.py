@@ -16,7 +16,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 models_dict = {'resnet': models.resnet18(pretrained=True), 'alexnet': models.alexnet(pretrained=True),
                'vgg': models.vgg16(pretrained=True)}
 
-with open('imagenet dictionary/imagenet1000_clsid_to_human.txt') as imagenet_classes_file:
+with open('imagenet-dictionary/imagenet1000_clsid_to_human.txt') as imagenet_classes_file:
     imagenet_classes_dict = ast.literal_eval(imagenet_classes_file.read())
 
 def classify_image(img_path, model_name):
@@ -81,4 +81,4 @@ def classify_dog_image():
     return render_template('index.html', result=None)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)

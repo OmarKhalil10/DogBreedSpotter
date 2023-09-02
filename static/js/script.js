@@ -5,6 +5,8 @@ const uploadedImage = document.getElementById("uploaded-image");
 const classificationResult = document.getElementById("classification-result");
 const errorMessage = document.getElementById("error-message");
 const clearButton = document.getElementById("clear-button");
+const uploadSuccessDiv = document.getElementById("upload-success");
+const uploadedImageName = document.getElementById("uploaded-image-name");
 
 fileInput.addEventListener("change", function () {
     const file = fileInput.files[0];
@@ -13,6 +15,9 @@ fileInput.addEventListener("change", function () {
         reader.onload = function (e) {
             uploadedImage.src = e.target.result;
             classificationResult.textContent = "Click 'Classify' to classify the image.";
+            // Show the success message and set the uploaded image's name
+            uploadSuccessDiv.style.display = "block";
+            uploadedImageName.textContent = file.name;
         };
         reader.readAsDataURL(file);
     }
@@ -23,6 +28,8 @@ clearButton.addEventListener("click", function () {
     uploadedImage.src = "/static/images/waiting.gif";
     classificationResult.textContent = "Waiting for new image to be uploaded...";
     errorMessage.textContent = "";
+    // Hide the success message when clearing
+    uploadSuccessDiv.style.display = "none";
 
     // Trigger a clear request to the server
     fetch("/", {

@@ -721,6 +721,17 @@
     cursor: pointer;
     display: inline-block;
 }
+/* Add this CSS to style the success message in green */
+#uploaded-image-name {
+    color: green;
+    font-weight: bold;
+}
+/* Add this CSS to style the word "successfully" in green */
+.green-text {
+    color: green;
+    font-weight: bold;
+}
+
 
 /*============================================
 * END Footer Area
