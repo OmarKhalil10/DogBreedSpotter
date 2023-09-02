@@ -3,7 +3,7 @@
 ## Complete the following steps to get Docker running locally
 
 # Set version tag
-version="v1"
+version="v6"
 
 # Step 1:
 # Build image and add a descriptive tag with version

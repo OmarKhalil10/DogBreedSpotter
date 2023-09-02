@@ -118,6 +118,33 @@ sudo poweron
 ```
 
 # Build Docker on your local machine
-docker build -t gcr.io/$MY_PROJECT_ID/dogbreedspotter:v1 -f Dockerfile .
+docker build -t gcr.io/$MY_PROJECT_ID/dogbreedspotter:v6 -f Dockerfile .
 # Push the Docker image to Container Registry 
-docker push gcr.io/$MY_PROJECT_ID/dogbreedspotter:v1
+docker push gcr.io/$MY_PROJECT_ID/dogbreedspotter:v6
+
+# Deploy a Docker image on Cloud Run
+
+```
+gcloud run deploy dog-breed-spotter \
+ --image gcr.io/$MY_PROJECT_ID/dogbreedspotter:v6 \
+ --region europe-west6 \
+ --platform managed \
+ --memory 8Gi \
+ --cpu 2 \
+ --max-instances 25
+```
+
+# Use the gcloud run revisions list command to list all revisions of your Cloud Run service. Replace <SERVICE_NAME> with the name of your service.
+
+```
+gcloud run revisions list --platform managed --region europe-west6 --service dog-breed-spotter --format="value(name)" | sort
+```
+
+# Use the gcloud run revisions delete command to delete each of the old revisions. Replace <REVISION_NAME> with the name of each revision you want to delete.
+
+```
+gcloud run revisions delete <REVISION_NAME> --platform managed --region europe-west6 --quiet
+```
+
+You can run this command for each old revision you copied in the previos step
+

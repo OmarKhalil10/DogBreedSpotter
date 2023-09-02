@@ -20,9 +20,8 @@ RUN pip install -r requirements.txt && \
     rm /app/requirements.txt
 
 ## Step 4:
-# Expose port 5000
-EXPOSE 5000
-ENV PORT 5000
+# Expose port 8080
+EXPOSE 8080
 
-# Use gunicorn as the entrypoint
-CMD exec gunicorn --bind :$PORT app:app --workers 1 --threads 1 --timeout 60
+# Run app.py at container launch
+CMD ["python", "app.py"]

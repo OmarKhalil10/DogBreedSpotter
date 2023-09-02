@@ -4,6 +4,7 @@ flask
 flask-cors
 numpy
 werkzeug
+gunicorn
 
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==1.13.1
