@@ -148,3 +148,23 @@ gcloud run revisions delete <REVISION_NAME> --platform managed --region europe-w
 
 You can run this command for each old revision you copied in the previos step
 
+# Show the description of a specific revision in Google Cloud Run
+gcloud run revisions describe dog-breed-spotter-00019-5s2 \
+  --platform managed \
+  --region europe-west6 \
+
+# Check the Flask application on Cloud Run
+
+```
+https://dog-breed-spotter-t6mbhrffxa-oa.a.run.app
+```
+
+# Or you send HTTPS requests to the Cloud Run instance for testing
+
+```
+python request_main_v6.py
+```
+
+
+
+
