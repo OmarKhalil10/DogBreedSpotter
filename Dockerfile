@@ -12,7 +12,6 @@ COPY templates /app/templates/
 COPY static /app/static/
 COPY uploads /app/uploads/
 COPY ./imagenet-dictionary /app/imagenet-dictionary/
-COPY ./dogs-names /app/dogs-names/
 
 ## Step 3:
 # Install packages from requirements.txt
