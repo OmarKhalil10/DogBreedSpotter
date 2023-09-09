@@ -349,22 +349,22 @@ gcloud run deploy dog-breed-spotter \
 ![Cloud Run](/static/docs/6.png)
 
 
-## 14. Use the gcloud run revisions list command to list all revisions of your Cloud Run service. Replace <SERVICE_NAME> with the name of your service.
+#### Use the gcloud run revisions list command to list all revisions of your Cloud Run service. Replace <SERVICE_NAME> with the name of your service.
 
 ```
 gcloud run revisions list --platform managed --region europe-west6 --service dog-breed-spotter --format="value(name)" | sort
 ```
 
-## 15. Use the gcloud run revisions delete command to delete each of the old revisions. Replace <REVISION_NAME> with the name of each revision you want to delete. [If Any!]
+#### Use the gcloud run revisions delete command to delete each of the old revisions. Replace <REVISION_NAME> with the name of each revision you want to delete. [If Any!]
 
 ```
 gcloud run revisions delete <REVISION_NAME> --platform managed --region europe-west6 --quiet
 ```
 
-### NOTE
+#### NOTE
 You can run this command for each old revision you copied in the previos step
 
-## 16. Show the description of a specific revision in Google Cloud Run
+#### Show the description of a specific revision in Google Cloud Run
 
 ```
 gcloud run revisions describe dog-breed-spotter-00019-5s2 \
@@ -372,7 +372,7 @@ gcloud run revisions describe dog-breed-spotter-00019-5s2 \
   --region europe-west6 \
 ```
 
-## 17. Check the Flask application on Cloud Run
+## 14. Check the Flask application on Cloud Run
 
 ```
 https://dog-breed-spotter-t6mbhrffxa-oa.a.run.app
@@ -384,7 +384,7 @@ Or you send HTTPS requests to the Cloud Run instance for testing
 python request_main_v6.py
 ```
 
-## The response can be found from the log on dog-breed-spotter-00019-5s2 instance on Cloud Run.
+### The response can be found from the log on dog-breed-spotter-00019-5s2 instance on Cloud Run.
 
 ![dog-breed-spotter-00019-5s2 logs](/static/docs/7.png)
 
